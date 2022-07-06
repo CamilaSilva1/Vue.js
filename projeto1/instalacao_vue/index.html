@@ -1,0 +1,37 @@
+<!-- Created by Camila Silva
+     Since 27/05/2022
+     Vuejs installation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá Vue.js</title>
+
+    <!-- import vuejs  -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="src/app.js" defer></script>
+</head>
+<body>
+    <!-- criando esta div porque o vue precisa ser inicializado em algum 
+        elemento da pagina -->
+    <div id="app">
+        <!-- Criando um formulario para utilizar data binding
+         Data binding permite mudar os dados em tempo real, atraves do input -->
+        <form id="app-form">
+            <!-- v-model: acessando o input_name criado no vue e enviando os dados
+                inseridos no input para a variavel input_name -->
+            <input type="text" v-model="input_name" placeholder="Digite seu nome">
+
+            <!-- v-on:click - falando pro vue que quero adicionar uma ação de click
+                E chamando a função submitForm criada no vue -->
+            <input type="submit" value="Enviar" v-on:click="submitForm">
+        </form>
+
+        <!-- imprimindo os dados de forma dinâmica -->
+        <p>O nome digitado foi: {{name}}</p>
+    </div>
+</body>
+</html>
